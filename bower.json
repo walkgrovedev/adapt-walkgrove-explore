@@ -1,0 +1,19 @@
+{
+    "name": "adapt-walkgrove-explore",
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/walkgrovedev/adapt-walkgrove-explore.git"
+    },
+    "framework": "5",
+    "version": "1.0.0",
+    "homepage": "https://github.com/walkgrovedev/adapt-walkgrove-explore.git",
+    "component": "explore",
+    "displayName": "Explore",
+    "description": "A component ...",
+    "main": "/js/adapt-walkgrove-explore.js",
+    "keywords": [
+        "adapt-plugin",
+        "adapt-component"
+    ],
+    "license": "GPL-3.0"
+}
