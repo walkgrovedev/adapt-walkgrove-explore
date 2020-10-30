@@ -1,12 +1,31 @@
 <div class="component__inner explore__inner">
   {{> component this}} 
 
-  {{!-- <div class="explore__main">
-  {{#each _items}}
+  <div class="component__widget explore__widget">
 
-  {{/each}}
-  </div> 
-  
-  {{#if body}} {{/if}} --}}
+    <img class="explore__image" src="{{_graphic.src}}" {{#if _graphic.alt}}aria-label="{{_graphic.alt}}"{{else}}aria-hidden="true"{{/if}}>
+
+    <div class="explore__main">
+      {{#each _items}}
+        <div class="explore__area js-click-area" data-index="{{@index}}" style="width:{{_area._width}}%;height:{{_area._height}}%;top:{{_area._top}}%;left:{{_area._left}}%;"></div>
+      {{/each}}
+    </div> 
+
+    {{#if _popupsinline}} 
+    <div class="explore__content">
+      {{#each _items}}
+        <div class="explore__info" style="width:{{_content._width}}%;height:{{_content._height}}%;top:{{_content._top}}%;left:{{_content._left}}%;">
+          <button class="btn-icon notify__btn-icon notify__close-btn js-info-close-btn" aria-label="Close popup" tabindex="0">
+            <div class="icon"></div>
+          </button>
+          <h3>{{title}}</h3>
+          <div>{{body}}</div>
+        </div>
+      {{/each}}
+    </div> 
+    {{/if}}
+
+
+  </div>
 
 </div>

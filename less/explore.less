@@ -1,6 +1,67 @@
-.expore {
+.explore {
 
-    &__main {
-        
+    &__widget {
+        position: relative;
     }
+
+    &__main, &__content {
+        position: absolute;
+        top:0;
+        left:0;
+        width:100%;
+        height: 100%;
+
+        .explore__area {
+            border: 5px solid @item-color;
+            box-shadow: 0 0 5px @grey;
+            border-radius: 3px;
+            position: absolute;
+            cursor: pointer;
+
+            &.is-visited {
+                border: 5px solid @item-visited;
+            }
+        }
+
+        .explore__info {
+            background-color: #fff;
+            position: absolute;
+            height: auto;
+            display: none;
+            opacity: 0;
+            box-sizing: border-box;
+            padding: 0 2rem 1.5rem 2rem;
+
+            overflow: hidden;
+            overflow-y: auto;
+
+            &.is-visible {
+                display: block;
+                opacity: 1;
+                animation: fadeIn;
+                animation-duration: 1s;
+            }
+
+            @media (max-width: @device-width-small) {
+                height: 90%!important;
+                width: 90%!important;
+                top:5%!important;
+                left: 5%!important;
+
+                padding: 0 1rem 0.5rem 1rem;
+            }
+
+            
+        }
+    }
+
+    &__content {
+        display: none;
+
+        &.is-visible {
+            display: block;
+        }
+    }
+
+    
 }

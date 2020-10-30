@@ -29,6 +29,167 @@
       "validators": [],
       "help": "This is the instruction text",
       "translatable": true
+    },
+    "_popupsinline": {
+      "type": "string",
+      "required": false,
+      "translatable": false
+    },
+    "_graphic": {
+      "type": "object",
+      "required": false,
+      "title": "Main explore",
+      "properties": {
+        "src": {
+          "type": "string",
+          "required": false,
+          "default": "",
+          "inputType": "Asset:image",
+          "validators": [],
+          "help": "This is the image that appears behind the selectable areas"
+        },
+        "alt": {
+          "type": "string",
+          "required": false,
+          "default": "",
+          "inputType": "Text",
+          "validators": [],
+          "help": "Alternative text for the image",
+          "translatable": true
+        },
+        "attribution": {
+          "type": "string",
+          "required": false,
+          "default": "",
+          "inputType": "Text",
+          "validators": [],
+          "help": "Text to be displayed as an attribution",
+          "translatable": true
+        }
+      }
+    },
+    "_items": {
+      "type": "array",
+      "required": true,
+      "title": "Flipcards",
+      "items": {
+        "type": "object",
+        "required": true,
+        "properties": {
+          "title": {
+            "type": "string",
+            "required": true,
+            "default": "",
+            "title": "Area content title",
+            "inputType": "Text",
+            "validators": [],
+            "help": "",
+            "translatable": true
+          },
+          "body": {
+            "type": "string",
+            "required": true,
+            "default": "",
+            "title": "Area content info",
+            "inputType": "Text",
+            "validators": [],
+            "help": "",
+            "translatable": true
+          },
+          "_area": {
+            "type": "object",
+            "required": true,
+            "properties": {
+              "_width": {
+                "type": "number",
+                "required": true,
+                "default": "",
+                "title": "Area height",
+                "inputType": "Number",
+                "validators": ["required", "number"],
+                "help": "",
+                "translatable": false
+              },
+              "_height": {
+                "type": "number",
+                "required": true,
+                "default": "",
+                "title": "Area height",
+                "inputType": "Number",
+                "validators": ["required", "number"],
+                "help": "",
+                "translatable": false
+              },
+              "_top": {
+                "type": "number",
+                "required": true,
+                "default": "",
+                "title": "Area position from top",
+                "inputType": "Number",
+                "validators": ["required", "number"],
+                "help": "",
+                "translatable": false
+              },
+              "_left": {
+                "type": "number",
+                "required": true,
+                "default": "",
+                "title": "Area position from left",
+                "inputType": "Number",
+                "validators": ["required", "number"],
+                "help": "",
+                "translatable": false
+              }
+            }
+          },
+          "_content": {
+            "type": "object",
+            "required": false,
+            "properties": {
+              "_width": {
+                "type": "number",
+                "required": true,
+                "default": "",
+                "title": "Area content height",
+                "inputType": "Number",
+                "validators": ["required", "number"],
+                "help": "",
+                "translatable": false
+              },
+              "_height": {
+                "type": "number",
+                "required": true,
+                "default": "",
+                "title": "Area content height",
+                "inputType": "Number",
+                "validators": ["required", "number"],
+                "help": "",
+                "translatable": false
+              },
+              "_top": {
+                "type": "number",
+                "required": true,
+                "default": "",
+                "title": "Area content position from top",
+                "inputType": "Number",
+                "validators": ["required", "number"],
+                "help": "",
+                "translatable": false
+              },
+              "_left": {
+                "type": "number",
+                "required": true,
+                "default": "",
+                "title": "Area content position from left",
+                "inputType": "Number",
+                "validators": ["required", "number"],
+                "help": "",
+                "translatable": false
+              }
+            }
+          }
+        }
+      }
     }
   }
 }

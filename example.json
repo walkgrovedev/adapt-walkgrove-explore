@@ -9,6 +9,45 @@
         "displayTitle": "Our first look at a component",
         "body": "This component you're reading is a text component. All components take this form of a title and body - except a blank component. However it's important to realise that title and body attributes are not needed. <br><br>Take for instance the media component opposite or below on a smaller device - has no body attribute. Instead of the HTML being rendered Adapt simply doesn't render it. The title attribute is simply a break tag to push the media component level with the opposite component.",
         "instruction": "",
+        "_comment": "_popupsinline is optional - if not present, the content is displayed in popups",
+        "_popupsinline": true,
+        "_graphic": {
+            "src": "https://via.placeholder.com/1920x1040",
+            "alt": "placeholder alt"
+        },
+        "_items": [
+            {
+                "title": "Element 1",
+                "body": "The content is displayed here.",
+                "_area": {
+                "_width": 10,
+                "_height": 3,
+                "_top": 25,
+                "_left": 25
+                },
+                "_content": {
+                "_width": 90,
+                "_top": 55,
+                "_left": 5
+                }
+            },
+            {
+                "title": "Element 2",
+                "body": "The content is displayed here.",
+                "_area": {
+                "_width": 15,
+                "_height": 10,
+                "_top": 75,
+                "_left": 75
+                },
+                "_content": {
+                "_width": 90,
+                "_height": 90,
+                "_top": 5,
+                "_left": 5
+                }
+            }
+        ],
         "_pageLevelProgress": {
             "_isEnabled": true
         }
