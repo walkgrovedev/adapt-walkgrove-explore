@@ -45,6 +45,17 @@ define([
         this.$('.explore__info').eq(popupIndex).addClass('is-visible'); 
       }
 
+      //audio?
+      if (Adapt.config.get('_sound')._isActive === true) {
+        this.model.get('_items').forEach((item, i) => {
+          if (i === popupIndex) {
+            if (item._audio) {
+              Adapt.trigger('audio:partial', {src: item._audio._src});
+            }
+          }
+        });
+      }
+
       this.setItemVisited(popupIndex);
     },
 
@@ -54,6 +65,11 @@ define([
       });
       this.$('.explore__content').removeClass('is-visible'); 
       this._isPopupOpen = false;
+
+      //audio?
+      if (Adapt.config.get('_sound')._isActive === true) {
+        Adapt.trigger('audio:stop');
+      }      
     },
 
     openPopup: function(_popupIndex) {
