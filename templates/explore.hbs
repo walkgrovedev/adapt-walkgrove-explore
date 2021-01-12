@@ -3,7 +3,7 @@
 
   <div class="component__widget explore__widget">
 
-    <img class="explore__image" src="{{_graphic.src}}" {{#if _graphic.alt}}aria-label="{{_graphic.alt}}"{{else}}aria-hidden="true"{{/if}}>
+    <img class="explore__image" src="{{_graphic.src}}" {{#if _graphic.alt}}aria-label="{{_graphic.alt}}"{{else}}aria-hidden="true" alt=""{{/if}}>
 
     <div class="explore__main">
       {{#each _items}}
