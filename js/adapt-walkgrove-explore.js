@@ -43,6 +43,7 @@ define([
       } else {
         this.$('.explore__content').addClass('is-visible'); 
         this.$('.explore__info').eq(popupIndex).addClass('is-visible'); 
+        this.$('.explore__info-title').a11y_focus();
       }
 
       //audio?
