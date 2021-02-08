@@ -12,6 +12,7 @@ define([
     },
     
     _isPopupOpen: false,
+    _isPopupOpenIndex:-1,
     
     preRender: function() {
       this.checkIfResetOnRevisit();
@@ -38,12 +39,14 @@ define([
       this._isPopupOpen = true;
       const popupIndex = this.$(event.currentTarget).data('index');
 
+      this._isPopupOpenIndex = popupIndex;
+
       if (!this.model.get('_popupsinline')) {
         this.openPopup(popupIndex);
       } else {
         this.$('.explore__content').addClass('is-visible'); 
         this.$('.explore__info').eq(popupIndex).addClass('is-visible'); 
-        this.$('.explore__info-title').a11y_focus();
+        this.$('.explore__info-title').eq(popupIndex).a11y_focus();
       }
 
       //audio?
@@ -71,6 +74,9 @@ define([
       if (Adapt.config.get('_sound')._isActive === true) {
         Adapt.trigger('audio:stop');
       }      
+
+      this.$('.explore__area').eq(this._isPopupOpenIndex).a11y_focus();
+      this._isPopupOpenIndex = -1;
     },
 
     openPopup: function(_popupIndex) {
@@ -98,6 +104,9 @@ define([
 
     onPopupClosed: function() {
       this._isPopupOpen = false;
+
+      this.$('.explore__area').eq(this._isPopupOpenIndex).a11y_focus();
+      this._isPopupOpenIndex = -1;
     },
 
 
